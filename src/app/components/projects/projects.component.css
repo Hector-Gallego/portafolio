@@ -1,0 +1,55 @@
+/* Estilos para la pila de imágenes */
+.image-stack {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%; /* Asegura que el div image-stack ocupe toda la altura disponible */
+   
+  
+    
+}
+
+/* Estilos para las imágenes apiladas */
+.img-stack {
+    position: absolute;
+    transition: z-index 0.3s, transform 0.3s;
+    transform-origin: center center;
+    z-index: 0;
+    width: 12rem;
+    
+
+}
+
+/* Rotación inicial de las imágenes */
+.img-stack:nth-child(1) {
+    transform: rotate(-45deg);
+    z-index: 0;
+}
+
+.img-stack:nth-child(2) {
+    transform: rotate(-25deg);
+    z-index: 0;
+}
+
+.img-stack:nth-child(3) {
+    transform: rotate(-5deg);
+    z-index: 0;
+}
+
+/* Efecto de cover en el hover */
+.img-stack:hover {
+    z-index: 1;
+    transform: translateX(0) rotate(0deg);
+}
+
+.z-index-top {
+    z-index: 1000000;
+}
+
+/* Establecer altura fija en dispositivos pequeños */
+@media (max-width: 767px) {
+    .h-300{
+      height: 20rem; /* Puedes ajustar la altura según tus necesidades */
+    }
+  }

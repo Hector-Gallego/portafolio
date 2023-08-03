@@ -1,0 +1,22 @@
+/* styles.css (o styles.scss) */
+
+/* Efecto de zoom */
+.zoom {
+    transition: transform 0.3s ease;
+}
+
+.zoom:hover {
+    transform: scale(5);
+    /* Ajusta el valor para personalizar el zoom */
+
+}
+
+/* Efecto de rotación */
+.rotate {
+    transition: transform 0.3s ease;
+}
+
+.rotate:hover {
+    transform: rotate(30deg);
+    /* Ajusta el valor para personalizar la rotación */
+}

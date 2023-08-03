@@ -1,0 +1,53 @@
+<div class="container mt-5 bg-white">
+
+    <div class="mt-5 mb-3">
+        <h1 class="display-6">Contáctame</h1>
+
+    </div>
+
+    <div class="row">
+        <div class="col-md-8 col-sm-12">
+
+            <form [formGroup]="formulario" (ngSubmit)="enviarFormulario()">
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Nombres</label>
+                    <input formControlName="names"  type="text" name="names" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Email</label>
+                    <input formControlName="email"  type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                </div>
+
+                <div class="floatingTextarea mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Mensaje</label>
+                    <textarea formControlName="message"  rows="6" name="message" class="form-control"  id="floatingTextarea"></textarea>
+                    
+                  </div>
+
+                <button type="submit" class="btn btn-dark">Enviar</button>
+            </form>
+
+        </div>
+        <div class="col-md-4 col-sm-12 mt-3 bg-dark d-flex flex-column justify-content-center align-items-center">
+
+            <p class="text-light">
+                <i class="bi bi-envelope-at-fill me-2"></i>
+                <!-- Enlace para abrir la aplicación de correo -->
+                <a href="mailto:gallegohector96@gmail.com" class="text-light">gallegohector96@gmail.com</a>
+            </p>
+            <p class="text-light">
+                <i class="bi bi-whatsapp me-2"></i>
+                <!-- Enlace para abrir la aplicación de WhatsApp -->
+                <a href="https://wa.me/573004468401" target="_blank" class="text-light">+57 300-446-8401</a>
+            </p>
+
+        </div>
+
+    </div>
+
+
+</div>
+
+
+  
+  
