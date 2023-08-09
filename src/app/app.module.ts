@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { ErrorHandler, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -15,6 +15,11 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { DetailsComponent } from './components/details/details.component';
+import { SniperComponent } from './components/shared/sniper/sniper.component';
+import { ErrorComponent } from './components/error/error/error.component';
+import { GlobalErrorHandler } from './components/error/error/global.error.hanlder';
+import { GalleryComponent } from './components/gallery/gallery.component';
+import { NgxTypedJsModule } from 'ngx-typed-js';
 
 
 @NgModule({
@@ -26,7 +31,12 @@ import { DetailsComponent } from './components/details/details.component';
     SkillsComponent,
     ProjectsComponent,
     ContactComponent,
-    DetailsComponent
+    DetailsComponent,
+    SniperComponent,
+    ErrorComponent,
+    GalleryComponent,
+    
+   
   ],
   imports: [
     BrowserModule,
@@ -35,9 +45,14 @@ import { DetailsComponent } from './components/details/details.component';
     BrowserAnimationsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    NgbModule
+    NgbModule,
+    NgxTypedJsModule
+    
+    
   ],
-  providers: [],
+  providers: [
+    {provide: ErrorHandler, useClass: GlobalErrorHandler}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
