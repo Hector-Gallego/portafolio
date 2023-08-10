@@ -1,8 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
+@import 'node_modules/aos/dist/aos.css';
+
 .bg-white{
     background-color: #ffffff;
 }
-body{
+
+.mt-100{
     margin-top: 100px;
-    margin-bottom: 100px;
 }
+

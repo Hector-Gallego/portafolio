@@ -1,18 +1,13 @@
-<div class="container mt-5 bg-white">
-
+<div class="position-relative" >
     <app-sniper *ngIf="loading"></app-sniper>
 
     <div *ngIf="!loading">
-        <div>
-            <h1 class="display-6 mb-5">Mis Proyectos</h1>
-        </div>
-    
+       
+        <h1 class="display-6 mb-5">Mis Proyectos</h1>
+
         <div class="d-flex flex-wrap justify-content-around">
-    
-    
-            <div *ngFor="let project of projects">
-    
-                <div class="card mb-5 " style="max-width: 540px; ">
+            <div class="mb-3" *ngFor="let project of projects">
+                <div class="card" style="max-width: 540px; ">
                     <div class="row  g-0">
                         <div class="col-md-5">
                             <img src="{{project.imgUrlsList[0]}}" class="p-2 img-fluid rounded-start" alt="...">
@@ -20,50 +15,26 @@
                         <div class="col-md-7">
                             <div class="card-body">
                                 <h5 class="card-title">{{project.name}}</h5>
-    
-    
-                                
                                 <div class="mb-3" >
                                     <span *ngFor="let category of project.categories" class="card-text"><small
                                             class="text-body-secondary me-3 ">{{category.name}}</small></span>
                                 </div>
-    
-    
-                                <span *ngFor="let tech of project.technologies"
+                                <div class="mb-3">
+                                    <span *ngFor="let tech of project.technologies"
                                     class="badge  text-bg-light me-2">{{tech.name}}</span>
-    
-    
-                                <div class="mt-3 mb-3 ">
+                                    
+                                </div>
+                                
+                                <div class="mb-3 ">
                                     <a href="{{project.urlDemo}}" class="btn btn-dark btn-sm me-3"><i
                                             class="bi bi-box-arrow-up-right me-2"></i>Ver demo</a>
-    
                                     <button (click)="goToRouteProjectDetails(project.id)" class="btn btn-dark btn-sm me-3"><i class="bi bi-info-circle me-2"></i>Detalles</button>
-    
                                 </div>
-    
                             </div>
-    
                         </div>
                     </div>
                 </div>
-    
             </div>
-    
-    
-    
-    
-    
         </div>
-    
-        <app-skills></app-skills>
-    
-    
-
     </div>
-
-  
-
-
-
-
 </div>

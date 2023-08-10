@@ -1,0 +1,28 @@
+
+
+
+/* Estilos del botón */
+.scroll-down {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+ .p-100{
+  padding-top: 100px;
+ }
+ .mh-100{
+  min-height: 100vh;
+ }
+
+ @media (max-width: 767px) {
+  .mb-sm-150{
+    margin-bottom: 150px; /* Ajusta el valor según tus preferencias */
+  }
+}
+
+
+
+ 

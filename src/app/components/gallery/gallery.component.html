@@ -1,12 +1,7 @@
-<div class="container mt-5">
+<div class="container mt-100">
+    <div class="mt-5 d-flex flex-wrap justify-content-around">
 
-    <div class="mb-5">
-        <h1 class="display-6">Un poco de Arte IA</h1>
-    </div>
-
-    <div class="d-flex flex-wrap justify-content-around">
-
-        <div class="image-container mb-4" (mouseenter)="showText()" (mouseleave)="hideText()">
+        <div  class=" image-container mb-4" (mouseenter)="showText()" (mouseleave)="hideText()">
             <img class="img-fluid rounded" src="https://th.bing.com/th/id/OIG.1GfHuLzG3tjpAh9ImhVP?pid=ImgGn" alt="">
             <div class="overlay" *ngIf="isTextVisible">
                 <ngx-typed-js   [shuffle]="true" [typeSpeed]="40" [backDelay]="200" [strings]="['a robot made of analog stereo equipment, digital art']">

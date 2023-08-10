@@ -1,28 +1,43 @@
-<div class="container mt-5 bg-white">
-
-    <div class="mt-5 mb-3">
-        <h1 class="display-6">Contáctame</h1>
+<div>
+    <div class="">
+        <h1 class="display-6 mb-5">Contáctame</h1>
 
     </div>
 
     <div class="row">
         <div class="col-md-8 col-sm-12">
 
-            <form [formGroup]="formulario" (ngSubmit)="enviarFormulario()">
+            <form novalidate class="needs-validation" (ngSubmit)="enviarFormulario()" [formGroup]="formulario">
+
                 <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label">Nombres</label>
-                    <input formControlName="names"  type="text" name="names" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <label for="names" class="form-label">Nombres</label>
+                    <input formControlName="names" type="text" name="names" class="form-control" id="names"
+                        [ngClass]="{ 'is-invalid': enviado && fc['names'].errors }">
+                    <div *ngIf="enviado && fc['names'].errors" class="invalid-feedback">
+                        <div *ngIf="fc['names'].errors?.['required']">Por favor, ingrese su nombre.</div>
+                    </div>
+
                 </div>
                 <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label">Email</label>
-                    <input formControlName="email"  type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <label for="emial" class="form-label">Email</label>
+                    <input formControlName="email" type="email" name="email" class="form-control"
+                        id="emaill" [ngClass]="{ 'is-invalid': enviado && fc['email'].errors }">
+                    <div *ngIf="enviado && fc['email'].errors" class="invalid-feedback" >
+                        <div *ngIf="fc['email'].errors?.['required']">Por favor, ingrese su email.</div>
+                        <div *ngIf="fc['email'].errors?.['email']">Por favor, ingrese un email valido.</div>
+        
+                    </div>
                 </div>
 
                 <div class="floatingTextarea mb-3">
                     <label for="exampleInputEmail1" class="form-label">Mensaje</label>
-                    <textarea formControlName="message"  rows="6" name="message" class="form-control"  id="floatingTextarea"></textarea>
-                    
-                  </div>
+                    <textarea formControlName="message" rows="4" name="message" class="form-control"
+                        id="floatingTextarea" [ngClass]="{ 'is-invalid': enviado && fc['message'].errors }"></textarea>
+                    <div *ngIf="enviado && fc['message'].errors" class="invalid-feedback">
+                        <div *ngIf="fc['message'].errors?.['required']">Por favor, ingrese su un mnesaje.</div>
+
+                    </div>
+                </div>
 
                 <button type="submit" class="btn btn-dark">Enviar</button>
             </form>
@@ -47,7 +62,3 @@
 
 
 </div>
-
-
-  
-  

@@ -31,7 +31,8 @@ export class NgbdModalContent {
 })
 export class ContactComponent {
 
-  formulario: FormGroup = new FormGroup({});
+  
+  formulario = {} as FormGroup;
   enviado = false;
 
 
@@ -50,32 +51,35 @@ export class ContactComponent {
 
   enviarFormulario() {
 
+    
 
+    this.enviado=true;
 
     if (this.formulario?.valid) {
 
-      console.log("se envio el mensaje de forma correcta");
-
-
       this.http.post('https://formspree.io/f/xgejoroz', this.formulario.value).subscribe(
         () => {
-          this.formulario?.reset();
-          this.enviado = true;
+          this.enviado = false;
+          this.formulario?.reset(); 
           this.open();
-
-        },
-        (error) => {
-          console.log(error);
-          console.log("algo salio mal");
-
-
         }
       );
+    }
+
+    if (this.formulario?.invalid) {
+      console.log(this.fc['email'].errors);  
+      console.log(this.enviado);
+        
+      return;
     }
   }
 
   open() {
     this.modalService.open(NgbdModalContent);
 
+  }
+
+  get fc(){
+    return this.formulario.controls;
   }
 }

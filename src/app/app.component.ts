@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import * as  AOS from 'aos';
 
 
 @Component({
@@ -10,4 +11,10 @@ import { RouterOutlet } from '@angular/router';
 })
 export class AppComponent {
   title = 'portafolio';
+
+  
+  ngOnInit() {
+    AOS.init(); // Inicializa AOS en el evento OnInit
+    window.addEventListener('load', AOS.refresh);
+  }
 }

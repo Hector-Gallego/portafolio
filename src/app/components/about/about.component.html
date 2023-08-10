@@ -1,39 +1,106 @@
-<div class="container mt-5 bg-white">
-    <h1 class="display-6">
-        <ngx-typed-js   [shuffle]="true" [typeSpeed]="30" [backDelay]="200" [strings]="['Hola, me llamo Héctor Hernández']">
-            <span class="typing display-6"></span>
-        </ngx-typed-js>
-        
-    </h1>
-    <p class="mt-5">
+<div class="container " style="height: 100vh;">
 
-        Soy un estudiante de Ingeniería de Software y desarrollador web full stack. Mi pasión y enfoque se centran en
-        Java y su framework Spring Boot, con los cuales construyo soluciones backend, API REST y microservicios. Además,
-        cuento con amplias habilidades en el desarrollo frontend utilizando TypeScript y Angular, así como sólidos
-        conocimientos en SQL, HTML, CSS y JavaScript.
-    </p>
-    <p class="mt-3">
-        Paralelamente, me siento atraído por el emocionante mundo de la Ciencia de Datos. Por esta razón, en la
-        actualidad me encuentro en proceso de capacitación en Python, R y Power BI, con el objetivo de complementar mis
-        conocimientos y ser capaz de crear soluciones integrales basadas en datos.
-    </p>
+    <div  class="bg-white mb-sm-150 d-flex align-items-center justify-content-center mh-100"   >
 
-    <div class="mt-5">
-        <span class="lead ">
-            <em>"El éxito es la suma de pequeños esfuerzos repetidos día tras día."
-            </em>
-            <strong>- Robert Collier</strong>
+        <div class="w-100">
+            <h1 class="display-6 mb-5">
+                <ngx-typed-js [shuffle]="true" [typeSpeed]="30" [backDelay]="200"
+                    [strings]="['Hola, me llamo Héctor Hernández']">
+                    <span class="typing display-6"></span>
+                </ngx-typed-js>
+            </h1>
+            <p>
 
-        </span>
+                Soy un estudiante de Ingeniería de Software y desarrollador web full stack. Mi pasión y enfoque se
+                centran
+                en
+                Java y su framework Spring Boot, con los cuales construyo soluciones backend, API REST y microservicios.
+                Además,
+                cuento con amplias habilidades en el desarrollo frontend utilizando TypeScript y Angular, así como
+                sólidos
+                conocimientos en SQL, HTML, CSS y JavaScript.
+            </p>
+            <p>
+                Paralelamente, me siento atraído por el emocionante mundo de la Ciencia de Datos. Por esta razón, en la
+                actualidad me encuentro en proceso de capacitación en Python, R y Power BI, con el objetivo de
+                complementar
+                mis
+                conocimientos y ser capaz de crear soluciones integrales basadas en datos.
+            </p>
+
+            <div class="mb-5">
+                <span class="lead ">
+                    <em>"El éxito es la suma de pequeños esfuerzos repetidos día tras día."
+                    </em>
+                    <strong>- Robert Collier</strong>
+                </span>
+            </div>
+
+            <div>
+                <a [href]="pdfSrc" download="cv_hector_hernandez.pdf">
+                    <button class="btn btn-dark me-3"><i class="bi bi-file-earmark-pdf me-2"></i>Descargar CV</button>
+                </a>
+            </div>
+        </div>
+
+    
+          
+          <div class="scroll-down scroll-down d-none d-md-block">
+            <a  [routerLink]="['/sobremi']" fragment="proyectos" >
+                <img style="height: 7rem;" src="assets/down.gif" alt="">
+            </a>
+            
+          </div>
 
     </div>
 
-    <div class="mt-5">
-        <a [href]="pdfSrc" download="cv_hector_hernandez.pdf">
-            <button class="btn btn-dark me-3"><i class="bi bi-file-earmark-pdf me-2"></i>Descargar CV</button>
-        </a>
+    <div
+        data-aos="fade-up" 
+        data-aos-offset="100"
+        data-aos-anchor-placement="center-bottom" 
+        data-aos-duration="700" 
+        data-aos-once="false"
+        data-aos-mirror="true"
+         
+        id="proyectos" 
+        class="mh-100 p-100 mt-5 bg-white d-flex align-items-center justify-content-center">
+        <div  class="w-100">
+            <app-projects></app-projects>
+        </div>
+    </div>
+
+    <div data-aos="fade-up" 
+        data-aos-offset="200"
+        data-aos-anchor-placement="center-bottom" 
+        data-aos-duration="700" 
+        data-aos-once="false"
+        data-aos-mirror="true"  id="skills" class="mh-100 bg-white p-100  d-flex align-items-center justify-content-center">
+        <div  class="w-100">
+            <app-skills></app-skills>
+        </div>
+    </div>
+
+    <div data-aos="fade-up" 
+        data-aos-offset="200"
+        data-aos-anchor-placement="center-bottom" 
+        data-aos-duration="700" 
+        data-aos-once="false"
+        data-aos-mirror="true"  
+        id="contacto" 
+        class="pb-5 mh-100 p-100 bg-white d-flex align-items-center justify-content-center">
+        <div class="w-100">
+            <app-contact></app-contact>
+        </div>
 
     </div>
+
+    <div 
+    id="contacto" 
+    class="pb-5 h-25 p-100 bg-white d-flex align-items-center justify-content-center">
+    <div class="w-100">
+    </div>
+
+</div>
 
 
 </div>
